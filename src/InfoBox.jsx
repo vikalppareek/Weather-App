@@ -27,12 +27,15 @@ export default function InfoBox({info}){
         image= {info.humidity >80 ? RAIN_URL:info.temp>15? HOT_URL:COLD_URL}
       
       />
+       <div className='hello'> 
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
+    
            {info.city} &nbsp;
             {info.humidity >80 ? < ThunderstormIcon/> :info.temp>15 ?<WbSunnyIcon/>:<AcUnitIcon/> } 
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' } }component ={"span"}>
+        <Typography  variant="body2" sx={{ color: 'text.secondary' } }component ={"span"}>
+          <div className='col'>
            <p> Temperature = {info.temp}</p>
            <p>Min Temperature= {info.tempMin}</p>
            <p>Max Temperature= {info.tempMax}</p>
@@ -41,9 +44,10 @@ export default function InfoBox({info}){
             The weather can be describe as <i>{info.weather}</i> and  feels_like 
             {info.feelsLike}&deg;C
            </p>
+           </div>
         </Typography>
       </CardContent>
-       
+      </div> 
     </Card>
     </div>
 
